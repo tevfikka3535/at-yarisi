@@ -40,3 +40,9 @@ function temizle() {
   document.getElementById("sonuclar").innerHTML = "";
   // geçmiş tahminler silinmez
 }
+function tahminleriEkle(tahminHTML) {
+    const tahminKutusu = document.createElement("div");
+    tahminKutusu.classList.add("result");
+    tahminKutusu.innerHTML = tahminHTML;
+    document.getElementById("sonTahminler").appendChild(tahminKutusu);
+}
