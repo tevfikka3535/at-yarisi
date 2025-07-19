@@ -2,24 +2,36 @@ function tahminEt() {
   const input = document.getElementById("horseInput").value;
   const atIsimleri = input.split(",").map(at => at.trim()).filter(at => at !== "");
 
-  const sonucListesi = document.getElementById("sonucListesi");
-  sonucListesi.innerHTML = "";
-
   if (atIsimleri.length < 2) {
-    sonucListesi.innerHTML = "<li>Lütfen en az 2 at ismi girin.</li>";
+    alert("Lütfen en az iki at ismi girin.");
     return;
   }
 
-  const karisikAtlar = atIsimleri.sort(() => Math.random() - 0.5);
+  // Atları karıştır
+  const karistirilmisAtlar = atIsimleri.sort(() => Math.random() - 0.5);
 
-  karisikAtlar.forEach((at, index) => {
+  // Tahmin sonucunu göster
+  const sonucListesi = document.getElementById("sonuclar");
+  sonucListesi.innerHTML = ""; // önceki tahmini temizle
+
+  const liste = document.createElement("ul");
+  karistirilmisAtlar.forEach((isim, index) => {
     const li = document.createElement("li");
-    li.textContent = `${index + 1}. ${at}`;
-    sonucListesi.appendChild(li);
+    li.textContent = `${index + 1}. ${isim}`;
+    liste.appendChild(li);
   });
+  sonucListesi.appendChild(liste);
+
+  // Son tahminleri aşağıya kaydet
+  const sonTahminler = document.getElementById("sonTahminler");
+  const tahminMetni = karistirilmisAtlar.map((isim, index) => `${index + 1}. ${isim}`).join(" | ");
+  const yeniKayit = document.createElement("li");
+  yeniKayit.textContent = tahminMetni;
+  sonTahminler.appendChild(yeniKayit);
 }
 
 function temizle() {
   document.getElementById("horseInput").value = "";
-  document.getElementById("sonucListesi").innerHTML = "";
+  document.getElementById("sonuclar").innerHTML = "";
+  // geçmiş tahminler silinmez
 }
