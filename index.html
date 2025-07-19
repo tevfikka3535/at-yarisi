@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>At Yarışı Tahmin</title>
+  <title>At Yarışı Tahmini</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>At Yarışı Tahmin Uygulaması</h1>
-  
+
   <input type="text" id="horseInput" placeholder="At isimlerini gir (virgülle ayır)">
-  <br>
+  <br><br>
   <button onclick="tahminEt()">Tahmin Et</button>
   <button onclick="temizle()">Temizle</button>
 
-  <ul id="sonucListesi"></ul>
+  <div id="sonuclar"></div>
+
+  <h3>Son Tahminler</h3>
+  <ul id="sonTahminler"></ul>
 
   <script src="script.js"></script>
 </body>
