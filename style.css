@@ -1,43 +1,14 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 60px;
-  background-color: #f8f8f8;
-}
-
-input {
-  padding: 10px;
-  width: 250px;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-button {
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: none;
-  background-color: #333;
-  color: white;
-}
-
-button:hover {
-  background-color: #555;
-}
-
-ul {
+#sonTahminler {
   list-style-type: none;
   padding: 0;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
-li {
-  background: white;
-  margin: 5px auto;
-  padding: 10px;
-  width: 250px;
-  border-radius: 5px;
+#sonTahminler li {
+  background-color: #f0f0f0;
   border: 1px solid #ccc;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  font-family: sans-serif;
 }
