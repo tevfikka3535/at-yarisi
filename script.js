@@ -1,4 +1,9 @@
-function tahminEt() {
+window.onload = function () {
+    const savedGuesses = JSON.parse(localStorage.getItem("gecmisTahminler")) || [];
+    savedGuesses.forEach((tahminHTML) => {
+        tahminleriEkle(tahminHTML);
+    });
+};function tahminEt() {
   const input = document.getElementById("horseInput").value;
   const atIsimleri = input.split(",").map(at => at.trim()).filter(at => at !== "");
 
